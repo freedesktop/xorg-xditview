@@ -1,4 +1,4 @@
-/* $XFree86$ */
+/* $XFree86: xc/programs/xditview/lex.c,v 1.4 2001/08/01 00:45:03 tsi Exp $ */
 
 #include <X11/Xos.h>
 #include <X11/IntrinsicP.h>
