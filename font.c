@@ -3,7 +3,7 @@
  *
  * map dvi fonts to X fonts
  */
-/* $XFree86: xc/programs/xditview/font.c,v 1.6 2002/06/19 20:09:19 keithp Exp $ */
+/* $XFree86$ */
 
 #include <X11/Xos.h>
 #include <X11/IntrinsicP.h>

@@ -1,4 +1,4 @@
-/* $XFree86: xc/programs/xditview/XFontName.c,v 1.3 2001/08/27 23:35:12 dawes Exp $ */
+/* $XFree86$ */
 /*
  * XFontName.c
  *
