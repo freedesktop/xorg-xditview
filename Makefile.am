@@ -51,7 +51,9 @@ APPDEFAULTFILES = \
         Xditview \
         Xditview-chrtr
 
-$(APPDEFAULTFILES): %: %.ad
+SUFFIXES = .ad
+
+.ad:
 	cp $< $@
 
 appdefault_DATA = $(APPDEFAULTFILES)
