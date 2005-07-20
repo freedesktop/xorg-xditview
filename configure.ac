@@ -35,8 +35,8 @@ AC_CHECK_FUNC([mkstemp],
    AC_DEFINE(HAS_MKSTEMP,1,[Define to 1 if you have the `mkstemp' function.]))
 
 # Checks for pkg-config packages
-XAW_CHECK_XPRINT_SUPPORT(DEP)
-AC_SUBST(DEP_CFLAGS)
-AC_SUBST(DEP_LIBS)
+XAW_CHECK_XPRINT_SUPPORT(XDITVIEW)
+AC_SUBST(XDITVIEW_CFLAGS)
+AC_SUBST(XDITVIEW_LIBS)
 
 AC_OUTPUT([Makefile])

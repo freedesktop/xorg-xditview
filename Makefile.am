@@ -21,8 +21,8 @@
 
 bin_PROGRAMS = xditview
 
-xditview_CFLAGS = $(DEP_CFLAGS)
-xditview_LDADD = $(DEP_LIBS) -lm
+xditview_CFLAGS = $(XDITVIEW_CFLAGS)
+xditview_LDADD = $(XDITVIEW_LIBS) -lm
 
 xditview_SOURCES =	\
         draw.c \
