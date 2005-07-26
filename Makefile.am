@@ -58,7 +58,7 @@ SUFFIXES = .ad
 
 appdefault_DATA = $(APPDEFAULTFILES)
 
-EXTRA_DIST = $(foreach FILE, $(APPDEFAULTFILES), $(FILE).ad) xdit.bm xdit_mask.bm
+EXTRA_DIST = $(APPDEFAULTFILES:%=%.ad) xdit.bm xdit_mask.bm
 
 CLEANFILES = $(APPDEFAULTFILES)
 
