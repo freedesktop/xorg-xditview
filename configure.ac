@@ -22,7 +22,7 @@ dnl
 dnl Process this file with autoconf to create configure.
 
 AC_PREREQ([2.57])
-AC_INIT(xditview,[7.0], [xorg@freedesktop.org],xditview)
+AC_INIT(xditview,[0.99.0], [https://bugs.freedesktop.org/enter_bug.cgi?product=xorg],xditview)
 AM_INIT_AUTOMAKE([dist-bzip2])
 AM_MAINTAINER_MODE
 
@@ -38,5 +38,7 @@ AC_CHECK_FUNC([mkstemp],
 XAW_CHECK_XPRINT_SUPPORT(XDITVIEW)
 AC_SUBST(XDITVIEW_CFLAGS)
 AC_SUBST(XDITVIEW_LIBS)
+
+XORG_RELEASE_VERSION
 
 AC_OUTPUT([Makefile])
