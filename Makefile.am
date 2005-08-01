@@ -40,7 +40,7 @@ xditview_SOURCES =	\
         XFontName.c \
         XFontName.h
 
-dist_man_MANS = \
+dist_man1_MANS = \
         xditview.man
 
 # App default files  (*.ad)
