@@ -51,6 +51,10 @@ APPDEFAULTFILES = \
         Xditview \
         Xditview-chrtr
 
+# Bitmaps referenced at runtime
+bitmapdir = $(includedir)/X11/bitmaps
+dist_bitmap_DATA = ldblarrow rdblarrow
+
 SUFFIXES = .ad
 
 .ad:
