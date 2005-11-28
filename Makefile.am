@@ -67,7 +67,7 @@ EXTRA_DIST = $(APPDEFAULTFILES:%=%.ad) xdit.bm xdit_mask.bm
 CLEANFILES = $(APPDEFAULTFILES)
 
 
-appmandir =  $(mandir)/man$(APP_MAN_SUFFIX)
+appmandir = $(APP_MAN_DIR)
 
 appman_DATA = $(appman_SOURCES:man=@APP_MAN_SUFFIX@)
 
