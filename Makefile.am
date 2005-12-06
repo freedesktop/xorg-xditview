@@ -40,7 +40,7 @@ xditview_SOURCES =	\
         XFontName.c \
         XFontName.h
 
-appman_SOURCES = \
+appman_PRE = \
         xditview.man
 
 # App default files  (*.ad)
@@ -69,9 +69,9 @@ CLEANFILES = $(APPDEFAULTFILES)
 
 appmandir = $(APP_MAN_DIR)
 
-appman_DATA = $(appman_SOURCES:man=@APP_MAN_SUFFIX@)
+appman_DATA = $(appman_PRE:man=@APP_MAN_SUFFIX@)
 
-EXTRA_DIST += $(appman_SOURCES)
+EXTRA_DIST += $(appman_PRE)
 CLEANFILES += $(appman_DATA)
 
 SED = sed
