@@ -20,3 +20,7 @@ stamp-h1
 xditview
 xditview.1
 *~
+*.o
+xditview-*.tar.*
+ChangeLog
+tags
