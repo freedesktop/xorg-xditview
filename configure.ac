@@ -43,9 +43,7 @@ AC_CHECK_FUNC([mkstemp],
    AC_DEFINE(HAS_MKSTEMP,1,[Define to 1 if you have the "mkstemp" function.]))
 
 # Checks for pkg-config packages
-PKG_CHECK_MODULES(XDITVIEW, xaw7)
-AC_SUBST(XDITVIEW_CFLAGS)
-AC_SUBST(XDITVIEW_LIBS)
+PKG_CHECK_MODULES(XDITVIEW, xaw7 xmu xt x11)
 
 PKG_CHECK_MODULES(APPDEFS, xt)
 xt_appdefaultdir=`$PKG_CONFIG --variable=appdefaultdir xt`
