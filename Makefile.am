@@ -21,7 +21,7 @@
 
 bin_PROGRAMS = xditview
 
-xditview_CFLAGS = $(XDITVIEW_CFLAGS)
+AM_CFLAGS = $(XDITVIEW_CFLAGS)
 xditview_LDADD = $(XDITVIEW_LIBS) -lm
 
 xditview_SOURCES =	\
