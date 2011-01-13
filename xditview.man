@@ -153,8 +153,8 @@ accurately reflected on the screen; for servers which do not support scaled
 will use the closest font from the same family.
 .SH "SEE ALSO"
 .IR X (__miscmansuffix__),
-.IR xrdb (1),
-.IR ditroff (1),
+.IR xrdb (__appmansuffix__),
+.IR ditroff (__appmansuffix__),
 .I "X Logical Font Description Conventions"
 .SH ORIGIN
 Portions of this program originated in
@@ -164,7 +164,7 @@ from
 .SH COPYRIGHT
 Copyright 1994 X Consortium
 .br
-See \fIX\fP(1) for a full statement of rights and permissions.
+See \fIX\fP(__miscmansuffix__) for a full statement of rights and permissions.
 .SH AUTHORS
 Keith Packard (MIT X Consortium)
 .br
