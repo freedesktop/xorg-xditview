@@ -434,22 +434,22 @@ CloseFile (DviWidget dw)
 static void
 OpenFile (DviWidget dw)
 {
-    char	tmpName[sizeof ("/tmp/dviXXXXXX")];
-#ifdef HAS_MKSTEMP
-    int fd;
-#endif
-
     dw->dvi.tmpFile = NULL;
     if (!dw->dvi.seek) {
-	strcpy (tmpName, "/tmp/dviXXXXXX");
+	char	tmpName[] = "/tmp/dviXXXXXX";
+
 #ifndef HAS_MKSTEMP
 	mktemp (tmpName);
 	dw->dvi.tmpFile = fopen (tmpName, "w+");
 #else
-	fd = mkstemp(tmpName);
-	dw->dvi.tmpFile = fdopen(fd, "w+");
+	int fd = mkstemp(tmpName);
+	if (fd != -1) {
+	    dw->dvi.tmpFile = fdopen(fd, "w+");
+	    if (dw->dvi.tmpFile == NULL)
+		close(fd);
+	}
 #endif
-	unlink (tmpName);
+	remove (tmpName);
     }
     if (dw->dvi.requested_page < 1)
 	dw->dvi.requested_page = 1;
