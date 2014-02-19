@@ -324,11 +324,11 @@ DisplayPageNumber (void)
     XtSetArg (arg[1], XtNlastPageNumber, &last_page);
     XtGetValues (dvi, arg, 2);
     if (actual_number == 0)
-	sprintf (value, "<none>");
+	snprintf (value, sizeof(value), "<none>");
     else if (last_page > 0)
-	sprintf (value, "%d of %d", actual_number, last_page);
+	snprintf (value, sizeof(value), "%d of %d", actual_number, last_page);
     else
-	sprintf (value, "%d", actual_number);
+	snprintf (value, sizeof(value), "%d", actual_number);
     text.firstPos = 0;
     text.length = strlen (value);
     text.ptr = value;
@@ -493,7 +493,7 @@ SetResolutionAction (Widget w, XEvent *xev, String *s, Cardinal *c)
 
     XtSetArg (args[0], XtNscreenResolution, &cur);
     XtGetValues (dvi, args, 1);
-    sprintf (resolutionBuf, "%d", cur);
+    snprintf (resolutionBuf, sizeof(resolutionBuf), "%d", cur);
     MakePrompt (toplevel, "Screen resolution:", NewResolution, resolutionBuf);
 }
 
