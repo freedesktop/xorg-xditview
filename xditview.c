@@ -82,12 +82,12 @@ static void MakePrompt(Widget, const char *, void (*)(char *), char *);
 static void
 Syntax(const char *call)
 {
-	(void) printf ("Usage: %s [-fg <color>] [-bg <color>]\n", call);
-	(void) printf ("       [-bd <color>] [-bw <pixels>] [-help]\n");
-	(void) printf ("       [-display displayname] [-geometry geom]\n");
-	(void) printf ("       [-page <page-number>] [-backing <backing-store>]\n");
-	(void) printf ("       [-resolution <screen-resolution>]\n\n");
-	exit(1);
+    (void) printf ("Usage: %s [-fg <color>] [-bg <color>]\n%s\n", call,
+                   "       [-bd <color>] [-bw <pixels>] [-help]\n"
+                   "       [-display displayname] [-geometry geom]\n"
+                   "       [-page <page-number>] [-backing <backing-store>]\n"
+                   "       [-resolution <screen-resolution>]\n");
+    exit(1);
 }
 
 static void	NewResolution (char *resString);
