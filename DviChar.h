@@ -9,7 +9,6 @@
  * case insensitive, a dash seperating the
  * CharSetRegistry from the CharSetEncoding
  */
-/* $XFree86$ */
 
 #ifndef _DVICHAR_H_
 #define _DVICHAR_H_
