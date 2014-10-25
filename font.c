@@ -440,17 +440,3 @@ DviCharIsLigature (DviCharNameMap *map, const char *name)
     }
     return NULL;
 }
-
-#if 0
-LoadFont (DviWidget dw, int position, int size)
-{
-	XFontStruct	*font;
-
-	font = QueryFont (dw, position, size);
-	dw->dvi.font_number = position;
-	dw->dvi.font_size = size;
-	dw->dvi.font = font;
-	XSetFont (XtDisplay (dw), dw->dvi.normal_GC, font->fid);
-	return;
-}
-#endif

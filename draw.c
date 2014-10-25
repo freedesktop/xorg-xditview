@@ -153,15 +153,6 @@ FlushCharCache (DviWidget dw)
     dw->dvi.cache.start_y = dw->dvi.cache.y = yx;
 }
 
-#if 0
-void
-ClearPage (DviWidget dw)
-{
-    if (dw->dvi.display_enable)
-	XClearWindow (XtDisplay (dw), XtWindow (dw));
-}
-#endif
-
 void
 SetGCForDraw (DviWidget dw)
 {
