@@ -37,11 +37,7 @@ typedef struct _dviCharNameMap {
 
 extern DviCharNameMap	*DviFindMap (const char *);
 extern void		DviRegisterMap (DviCharNameMap *);
-#ifdef NOTDEF
-extern char		*DviCharName (DviCharNameMap *, int, int);
-#else
 #define DviCharName(map,index,synonym)	((map)->dvi_names[index][synonym])
-#endif
 extern int		DviCharIndex (DviCharNameMap *, const char *);
 extern unsigned char	*DviCharIsLigature (DviCharNameMap *, const char *);
 extern void		ResetFonts (DviWidget);

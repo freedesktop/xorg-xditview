@@ -95,9 +95,6 @@ static void	NewFile (char *name);
 static void	DisplayPageNumber (void);
 static void	VisitFile (char *name, Boolean resetPage);
 static Widget	toplevel, paned, porthole, dvi;
-#ifdef NOTDEF
-static Widget	form, panner;
-#endif
 static Widget	popupMenu;
 static Widget	menuBar;
 static Widget	fileMenuButton, fileMenu;
@@ -156,59 +153,6 @@ static XtActionsRec xditview_actions[] = {
 
 static Atom wm_delete_window;
 
-#ifdef NOTDEF
-/*	Function Name: PannerCallback
- *	Description: called when the panner has moved.
- *	Arguments: panner - the panner widget.
- *                 closure - *** NOT USED ***.
- *                 report_ptr - the panner record.
- *	Returns: none.
- */
-
-/* ARGSUSED */
-static void 
-PannerCallback(Widget w, XtPointer closure, XtPointer report_ptr)
-{
-    Arg args[2];
-    XawPannerReport *report = (XawPannerReport *) report_ptr;
-
-    if (!dvi)
-	return;
-    XtSetArg (args[0], XtNx, -report->slider_x);
-    XtSetArg (args[1], XtNy, -report->slider_y);
-
-    XtSetValues(dvi, args, 2);
-}
-
-/*	Function Name: PortholeCallback
- *	Description: called when the porthole or its child has
- *                   changed 
- *	Arguments: porthole - the porthole widget.
- *                 panner_ptr - the panner widget.
- *                 report_ptr - the porthole record.
- *	Returns: none.
- */
-
-/* ARGSUSED */
-static void 
-PortholeCallback(Widget w, XtPointer panner_ptr, XtPointer report_ptr)
-{
-    Arg args[10];
-    Cardinal n = 0;
-    XawPannerReport *report = (XawPannerReport *) report_ptr;
-    Widget panner = (Widget) panner_ptr;
-
-    XtSetArg (args[n], XtNsliderX, report->slider_x); n++;
-    XtSetArg (args[n], XtNsliderY, report->slider_y); n++;
-    if (report->changed != (XawPRSliderX | XawPRSliderY)) {
-	XtSetArg (args[n], XtNsliderWidth, report->slider_width); n++;
-	XtSetArg (args[n], XtNsliderHeight, report->slider_height); n++;
-	XtSetArg (args[n], XtNcanvasWidth, report->canvas_width); n++;
-	XtSetArg (args[n], XtNcanvasHeight, report->canvas_height); n++;
-    }
-    XtSetValues (panner, args, n);
-}
-#endif
 
 int
 main(int argc, char **argv)
@@ -282,21 +226,8 @@ main(int argc, char **argv)
     (void) XtCreateManagedWidget ("nextButton", commandWidgetClass,
 				  menuBar, NULL, (Cardinal) 0);
 
-#ifdef NOTDEF
-    form = XtCreateManagedWidget ("form", formWidgetClass, paned,
-				    NULL, (Cardinal) 0);
-    panner = XtCreateManagedWidget ("panner", pannerWidgetClass,
-				    form, NULL, 0);
-    porthole = XtCreateManagedWidget ("porthole", portholeWidgetClass,
-				      form, NULL, 0);
-    XtAddCallback(porthole, 
-		  XtNreportCallback, PortholeCallback, (XtPointer) panner);
-    XtAddCallback(panner, 
-		  XtNreportCallback, PannerCallback, (XtPointer) porthole);
-#else
     porthole = XtCreateManagedWidget ("viewport", viewportWidgetClass,
 				      paned, NULL, 0);
-#endif
     dvi = XtCreateManagedWidget ("dvi", dviWidgetClass, porthole, NULL, 0);
     if (file_name)
 	VisitFile (file_name, FALSE);

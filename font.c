@@ -301,18 +301,6 @@ MapDviNameToXName (DviWidget dw, const char *dvi_name)
     return "-*-*-*-*-*-*-*-*-*-*-*-*-iso8859-1";
 }
 
-#ifdef NOTUSED
-static char *
-MapXNameToDviName (DviWidget dw, char *x_name)
-{
-    DviFontMap	*fm;
-    
-    for (fm = dw->dvi.font_map; fm; fm=fm->next)
-	if (!strcmp (fm->x_name, x_name))
-	    return fm->dvi_name;
-    return 0;
-}
-#endif
 
 void
 ParseFontMap (DviWidget dw)
