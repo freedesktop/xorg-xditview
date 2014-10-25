@@ -73,14 +73,14 @@ static XrmOptionDescRec options[] = {
 static char	current_file_name[1024];
 static FILE	*current_file;
 
-static void MakePrompt(Widget, char *, void (*)(char *), char *);
+static void MakePrompt(Widget, const char *, void (*)(char *), char *);
 
 /*
  * Report the syntax for calling xditview.
  */
 
 static void
-Syntax(char *call)
+Syntax(const char *call)
 {
 	(void) printf ("Usage: %s [-fg <color>] [-bg <color>]\n", call);
 	(void) printf ("       [-bd <color>] [-bw <pixels>] [-help]\n");
@@ -574,7 +574,7 @@ void Noop (Widget w, XEvent *xev, String *s, Cardinal *c)
 }
 
 static void
-MakePrompt(Widget centerw, char *prompt, void (*func)(char *), char *def)
+MakePrompt(Widget centerw, const char *prompt, void (*func)(char *), char *def)
 {
     static Arg dialogArgs[] = {
 	{XtNlabel, (XtArgVal) 0},

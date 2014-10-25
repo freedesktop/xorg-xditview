@@ -15,7 +15,7 @@
 #include "XFontName.h"
 
 static char *
-savestr (char *s)
+savestr (const char *s)
 {
 	char	*n;
 
@@ -240,10 +240,10 @@ InstallFontSizes (DviWidget dw, char *x_name, Boolean *scalablep)
 }
 
 static DviFontList *
-InstallFont (DviWidget dw, int position, char *dvi_name, char *x_name)
+InstallFont (DviWidget dw, int position, const char *dvi_name, const char *x_name)
 {
     DviFontList	*f;
-    char		*encoding;
+    const char	*encoding;
 
     f = LookupFontByPosition (dw, position);
     if (f) {
@@ -284,8 +284,8 @@ InstallFont (DviWidget dw, int position, char *dvi_name, char *x_name)
     return f;
 }
 
-static char *
-MapDviNameToXName (DviWidget dw, char *dvi_name)
+static const char *
+MapDviNameToXName (DviWidget dw, const char *dvi_name)
 {
     DviFontMap	*fm;
     
@@ -366,9 +366,9 @@ DestroyFontMap (DviFontMap *font_map)
 
 /*ARGSUSED*/
 void
-SetFontPosition (DviWidget dw, int position, char *dvi_name, char *extra)
+SetFontPosition (DviWidget dw, int position, const char *dvi_name, const char *extra)
 {
-    char	*x_name;
+    const char	*x_name;
 
     x_name = MapDviNameToXName (dw, dvi_name);
     (void) InstallFont (dw, position, dvi_name, x_name);
@@ -440,7 +440,7 @@ QueryFontMap (DviWidget dw, int position)
 }
 
 unsigned char *
-DviCharIsLigature (DviCharNameMap *map, char *name)
+DviCharIsLigature (DviCharNameMap *map, const char *name)
 {
     int	    i;
 

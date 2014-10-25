@@ -259,12 +259,12 @@ extern void		DrawLine(DviWidget, int, int);
 extern void		DrawCircle(DviWidget, int);
 extern void		DrawEllipse(DviWidget, int, int);
 extern void		DrawArc(DviWidget, int, int, int, int);
-extern void		DrawSpline(DviWidget, char *, int);
+extern void		DrawSpline(DviWidget, const char *, int);
 
 /* font.c */
 extern void		ParseFontMap(DviWidget);
 extern void		DestroyFontMap(DviFontMap *);
-extern void		SetFontPosition(DviWidget, int, char *, char *);
+extern void		SetFontPosition(DviWidget, int, const char *, const char *);
 #ifdef USE_XFT
 extern XftFont *	QueryFont(DviWidget, int, int);
 #else

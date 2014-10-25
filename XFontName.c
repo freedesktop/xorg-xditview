@@ -128,7 +128,8 @@ XFormatFontName (XFontName *fontName, unsigned int fontNameAttributes,
 		 XFontNameString fontNameString)
 {
 	XFontNameString	tmp;
-	char		*name = tmp, *f;
+	char		*name = tmp;
+	const char	*f;
 	int		left = sizeof (tmp) - 1;
 	char		number[32];
 
@@ -226,7 +227,7 @@ XCompareFontName (
 
 Bool
 XCopyFontName (
-	XFontName	*name1,
+	const XFontName	*name1,
 	XFontName	*name2,
 	unsigned int	fontNameAttributes)
 {

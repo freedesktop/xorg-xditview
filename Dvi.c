@@ -66,7 +66,7 @@ from the X Consortium.
  *       therefor it has been split in to and assigned to resources
  *       in the ClassInitialize routine.
  */
-static char default_font_map_1[] =  "\
+static const char *default_font_map_1 =  "\
 R	-*-times-medium-r-normal--*-*-*-*-*-*-iso8859-1\n\
 I	-*-times-medium-i-normal--*-*-*-*-*-*-iso8859-1\n\
 B	-*-times-bold-r-normal--*-*-*-*-*-*-iso8859-1\n\
@@ -85,7 +85,7 @@ HO	-*-helvetica-medium-o-normal--*-*-*-*-*-*-iso8859-1\n\
 HB	-*-helvetica-bold-r-normal--*-*-*-*-*-*-iso8859-1\n\
 HF	-*-helvetica-bold-o-normal--*-*-*-*-*-*-iso8859-1\n\
 ";
-static char default_font_map_2[] =  "\
+static const char *default_font_map_2 =  "\
 N	-*-new century schoolbook-medium-r-normal--*-*-*-*-*-*-iso8859-1\n\
 NI	-*-new century schoolbook-medium-i-normal--*-*-*-*-*-*-iso8859-1\n\
 NB	-*-new century schoolbook-bold-r-normal--*-*-*-*-*-*-iso8859-1\n\
