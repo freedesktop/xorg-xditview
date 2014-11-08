@@ -209,7 +209,7 @@ extern int		DviGetAndPut(DviWidget, int *);
 #define DviGetC(dw, cp)\
     (dw->dvi.readingTmp ? (\
 	((*cp = getc (dw->dvi.tmpFile)) == EOF) ? (\
-	    fseek (dw->dvi.tmpFile, 0l, 2),\
+	    fseek (dw->dvi.tmpFile, 0l, SEEK_END),\
 	    (dw->dvi.readingTmp = 0),\
 	    DviGetIn (dw,cp)\
 	) : (\

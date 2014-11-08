@@ -72,8 +72,8 @@ FileSeek(DviWidget dw, long position)
 {
 	if (dw->dvi.tmpFile) {
 		dw->dvi.readingTmp = 1;
-		fseek (dw->dvi.tmpFile, position, 0);
+		fseek (dw->dvi.tmpFile, position, SEEK_SET);
 	} else
-		fseek (dw->dvi.file, position, 0);
+		fseek (dw->dvi.file, position, SEEK_SET);
 }
 
